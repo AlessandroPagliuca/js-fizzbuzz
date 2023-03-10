@@ -15,11 +15,17 @@ body{
 }
 
 /*main*/
+@keyframes generate{
+    from {opacity: 0}
+  to {opacity: 1}
+}
 .c92Box{
     width: 65px;
-    height: 65px;   
+    height: 65px;  
 }
-
+.c92Animation{
+    animation: generate 1s linear; 
+}
 .c92Default{
     background-color: var(--c92-box);
 }
