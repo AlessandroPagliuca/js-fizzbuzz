@@ -11,10 +11,15 @@ Development of the "for loop", replacing multiples of 3 and 5
 with FizzBuzz, multiples of 3 with Fizz 
 and multiples of 5 with Buzz.
 */  
+let c92BoxBoard = document.querySelector('div.c92BoxBoard');
+
 for(let i = 1; i <= 100; i++){
 
+    let box = `<div class="c92Box debug">${i}</div>`;
+    c92BoxBoard.innerHTML += box;
     switch(true){
         case((i % 3 == 0 ) && (i % 5 == 0)):
+        box.innerHTML += 'FizzBuzz';
             console.log('FizzBuzz');
         break;
 
@@ -33,3 +38,6 @@ for(let i = 1; i <= 100; i++){
     }
     
 }
+
+
+

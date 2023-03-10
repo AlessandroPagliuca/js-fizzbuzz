@@ -13,3 +13,12 @@ body{
 .debug{
     border: 1px solid black;
 }
+
+/*main*/
+.c92BoxBoard{
+    width: 600px;
+}
+
+.c92Box{
+    padding: 10px;
+}
