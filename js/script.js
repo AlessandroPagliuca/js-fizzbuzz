@@ -18,44 +18,56 @@ myInput.style.backgroundColor = "transparent";
 
 let btnGenerate = document.getElementById('btnGenerate');
 
-btnGenerate.addEventListener('click', function(){
-    c92BoxBoard.innerHTML = '';
-    for(let i = 1; i <= myInput.value; i++){
-    
-        let stringV = '';
-        let stringBg = '';
-    
-        switch(true){
-            case((i % 3 == 0 ) && (i % 5 == 0)):
-            stringV = 'FizzBuzz';
-            stringBg = 'c92FizzBuzz';
-                console.log('FizzBuzz');
-            break;
-    
-            case(i % 3 == 0):
-                stringV = 'Fizz';
-                stringBg = 'c92Fizz';
-                console.log('Fizz');
-            break;
-    
-            case(i % 5 == 0):
-                stringV = 'Buzz';
-                stringBg = 'c92Buzz';
-                console.log('Buzz');
-            break;
-    
-            default:
-                stringV = i;
-                stringBg = 'c92Default';
-                console.log(i);
-            break;
-    
+
+
+    btnGenerate.addEventListener('click', function(){
+
+        if(myInput.value <= 0 || myInput.value > 100){
+            let box = `<div class="m-3 d-flex justify-content-center align-items-center">"Invalid data enter: min 1 and max 100, please try again"</div>`;
+            c92BoxBoard.innerHTML = box;
+            return;
         }
-        let box = `<div class="c92Box m-3 d-flex justify-content-center align-items-center ${stringBg}">${stringV}</div>`;
-        c92BoxBoard.innerHTML += box;
     
-    }
-});
+        
+
+        c92BoxBoard.innerHTML = '';
+        for(let i = 1; i <= myInput.value; i++){
+        
+            let stringV = '';
+            let stringBg = '';
+        
+            switch(true){
+                case((i % 3 == 0 ) && (i % 5 == 0)):
+                stringV = 'FizzBuzz';
+                stringBg = 'c92FizzBuzz';
+                    console.log('FizzBuzz');
+                break;
+        
+                case(i % 3 == 0):
+                    stringV = 'Fizz';
+                    stringBg = 'c92Fizz';
+                    console.log('Fizz');
+                break;
+        
+                case(i % 5 == 0):
+                    stringV = 'Buzz';
+                    stringBg = 'c92Buzz';
+                    console.log('Buzz');
+                break;
+        
+                default:
+                    stringV = i;
+                    stringBg = 'c92Default';
+                    console.log(i);
+                break;
+        
+            }
+            let box = `<div class="c92Box m-3 d-flex justify-content-center align-items-center ${stringBg}">${stringV}</div>`;
+            c92BoxBoard.innerHTML += box;
+        
+        }
+    });
+
 
 
 
