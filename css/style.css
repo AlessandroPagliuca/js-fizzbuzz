@@ -16,9 +16,22 @@ body{
 
 /*main*/
 .c92BoxBoard{
-    width: 600px;
 }
 
 .c92Box{
-    padding: 10px;
+    width: 65px;
+    height: 65px;   
+}
+
+.c92Default{
+    background-color: var(--c92-box);
+}
+.c92FizzBuzz{
+    background-color: var(--c92-box-mult-3-5);
+}
+.c92Fizz{
+    background-color: var(--c92-box-mult-3);
+}
+.c92Buzz{
+    background-color: var(--c92-box-mult-5);
 }
