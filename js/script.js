@@ -13,42 +13,51 @@ and multiples of 5 with Buzz.
 */  
 let c92BoxBoard = document.querySelector('div.c92BoxBoard');
 
+let myInput = document.getElementById('myInput');
+myInput.style.backgroundColor = "transparent";
 
-for(let i = 1; i <= 100; i++){
+let btnGenerate = document.getElementById('btnGenerate');
+
+btnGenerate.addEventListener('click', function(){
+    c92BoxBoard.innerHTML = '';
+    for(let i = 1; i <= myInput.value; i++){
     
-    let stringV = '';
-    let stringBg = '';
-
-    switch(true){
-        case((i % 3 == 0 ) && (i % 5 == 0)):
-        stringV = 'FizzBuzz';
-        stringBg = 'c92FizzBuzz';
-            console.log('FizzBuzz');
-        break;
-
-        case(i % 3 == 0):
-            stringV = 'Fizz';
-            stringBg = 'c92Fizz';
-            console.log('Fizz');
-        break;
-
-        case(i % 5 == 0):
-            stringV = 'Buzz';
-            stringBg = 'c92Buzz';
-            console.log('Buzz');
-        break;
-
-        default:
-            stringV = i;
-            stringBg = 'c92Default';
-            console.log(i);
-        break;
-
+        let stringV = '';
+        let stringBg = '';
+    
+        switch(true){
+            case((i % 3 == 0 ) && (i % 5 == 0)):
+            stringV = 'FizzBuzz';
+            stringBg = 'c92FizzBuzz';
+                console.log('FizzBuzz');
+            break;
+    
+            case(i % 3 == 0):
+                stringV = 'Fizz';
+                stringBg = 'c92Fizz';
+                console.log('Fizz');
+            break;
+    
+            case(i % 5 == 0):
+                stringV = 'Buzz';
+                stringBg = 'c92Buzz';
+                console.log('Buzz');
+            break;
+    
+            default:
+                stringV = i;
+                stringBg = 'c92Default';
+                console.log(i);
+            break;
+    
+        }
+        let box = `<div class="c92Box m-3 d-flex justify-content-center align-items-center ${stringBg}">${stringV}</div>`;
+        c92BoxBoard.innerHTML += box;
+    
     }
-    let box = `<div class="c92Box m-3 d-flex justify-content-center align-items-center ${stringBg}">${stringV}</div>`;
-    c92BoxBoard.innerHTML += box;
+});
 
-}
+
 
 
 
